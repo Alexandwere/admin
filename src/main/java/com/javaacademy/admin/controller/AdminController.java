@@ -40,7 +40,7 @@ public class AdminController {
     }
 
     @PatchMapping("/good")
-    @Operation(summary = "Изменение товара", description = "Изменение цены товара")
+    @Operation(summary = "Изменение товара", description = "Изменение атрибутов товара")
     public void updateGood(@RequestBody @Parameter(description = "Обновленный товар") GoodDto newGoodDto) {
         goodService.patchGood(newGoodDto, FIRST_SHOP_PORT);
         goodService.patchGood(newGoodDto, SECOND_SHOP_PORT);
