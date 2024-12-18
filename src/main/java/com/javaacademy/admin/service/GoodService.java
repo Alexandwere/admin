@@ -9,25 +9,25 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-
 @Service
 public class GoodService {
-    private final String PATCH_URL = "http://localhost:%s/shop/good";
 
-    ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final OkHttpClient client = new OkHttpClient();
 
     @SneakyThrows
-    public void patchGood(OkHttpClient client, GoodDto goodDto, String port) {
+    public void patchGood(GoodDto goodDto, String port) {
+        String patchUrl = "http://localhost:%s/shop/good";
         byte[] body = objectMapper.writeValueAsBytes(goodDto);
 
         Request request = new Request.Builder()
                 .patch(RequestBody.create(body))
-                .url(String.format(PATCH_URL, port))
+                .url(String.format(patchUrl, port))
                 .addHeader("Content-Type", "application/json")
                 .build();
 
         Response response = client.newCall(request).execute();
+        response.close();
     }
 
 }
