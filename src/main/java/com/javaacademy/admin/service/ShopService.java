@@ -17,7 +17,6 @@ import static com.javaacademy.admin.controller.AdminController.SECOND_SHOP_PORT;
 
 @Service
 public class ShopService {
-
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final OkHttpClient client = new OkHttpClient();
 
