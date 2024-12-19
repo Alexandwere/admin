@@ -33,7 +33,7 @@ public class AdminController {
 
     @GetMapping("/status")
     @Operation(summary = "Получение статуса", description = "Получение всех статусов")
-    @ApiResponse(responseCode = "200 - успешно",
+    @ApiResponse(responseCode = "200", description = "успешно",
             content = {@Content(array = @ArraySchema(schema = @Schema(implementation = GoodDto.class)))})
     public List<Map<String, Object>> getStatus() {
         return shopService.getStatuses();

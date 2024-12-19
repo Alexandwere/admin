@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GoodService {
-
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final OkHttpClient client = new OkHttpClient();
 
