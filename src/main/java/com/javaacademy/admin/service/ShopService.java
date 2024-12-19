@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static com.javaacademy.admin.controller.AdminController.FIRST_SHOP_PORT;
-import static com.javaacademy.admin.controller.AdminController.SECOND_SHOP_PORT;
-
 @Service
 public class ShopService {
+    public static final String FIRST_SHOP_PORT = "8081";
+    public static final String SECOND_SHOP_PORT = "8082";
+
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final OkHttpClient client = new OkHttpClient();
 

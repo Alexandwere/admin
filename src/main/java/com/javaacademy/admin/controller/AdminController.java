@@ -20,14 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+import static com.javaacademy.admin.service.ShopService.FIRST_SHOP_PORT;
+import static com.javaacademy.admin.service.ShopService.SECOND_SHOP_PORT;
+
 @RestController
 @RequestMapping("/shop")
 @RequiredArgsConstructor
 @Tag(name = "Shop controller", description = "Контроллер для работы с магазином")
 public class AdminController {
-    public static final String FIRST_SHOP_PORT = "8081";
-    public static final String SECOND_SHOP_PORT = "8082";
-
     private final ShopService shopService;
     private final GoodService goodService;
 
