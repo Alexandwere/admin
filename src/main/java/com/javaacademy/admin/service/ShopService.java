@@ -29,7 +29,7 @@ public class ShopService {
                 .url(String.format(statusUrl, port))
                 .build();
 
-        try(Response response = okHttpClient.newCall(request).execute()) {
+        try (Response response = okHttpClient.newCall(request).execute()) {
             return response.body().string();
         }
 
